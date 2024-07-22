@@ -124,9 +124,8 @@ export async function POST(
     )
 
     const cleaned = resp.replaceAll(",", "")
-    const chunks = cleaned.split("\n")
-    const response = chunks[0]
 
+    const response = cleaned.trim()
     await memoryManager.writeToHistory("" + response.trim(), friendKey)
     var Readable = require("stream").Readable
 
